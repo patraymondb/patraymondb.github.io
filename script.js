@@ -1,5 +1,5 @@
 // --- Configuration ---
-const PASSWORD_HASH = '4e9c6c0c066d067173e1b2ed73e179158b90b9914e6c264ca504c429dc7d6e57'; // Replace with your own SHA-256 hash
+const PASSWORD_HASH = '69d4547eba893e1193421750098db5f0b61b6c3a3481eb31ab6e191873b79eea'; // Replace with your own SHA-256 hash
 const redirectOnSuccess = null; // Optional: e.g. 'portfolio.html' to redirect instead of reveal content
 
 // --- Utility: Convert text to SHA-256 hash ---
