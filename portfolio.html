@@ -12,171 +12,167 @@
       background-color: #f9f9f9;
       color: #333;
     }
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 2rem;
+    header, section, footer {
+      display: none; /* Hidden by default — shown only after correct password */
+    }
+    #password-gate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
     }
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-      background-color: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    #password-input {
+      padding: 8px;
+      font-size: 16px;
+      margin-top: 10px;
     }
-    h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 0.5rem;
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
     }
-    .skill-matrix, .bar-chart, .process-flow {
-      margin-top: 1.5rem;
-      font-family: monospace;
-      white-space: pre;
-      background-color: #ecf0f1;
-      padding: 1rem;
-      border-left: 4px solid #3498db;
-    }
-    a {
-      color: #3498db;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #2c3e50;
-      color: white;
-      margin-top: 2rem;
+    #status {
+      color: red;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Patrick Beswick - Technical Business Analyst Portfolio</h1>
-    <p>A bridge between business needs and technical delivery, leveraging AI, CRM automation, and process optimization.</p>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>A technical business analyst with 7+ years of experience in AI-driven solutions, enterprise training, and process optimization. I bridge the gap between business needs and technical delivery, leveraging my computer science background and hands-on project experience to drive efficiency, compliance, and innovation. My work has reduced costs by 50%, streamlined workflows, and improved client satisfaction through tailored solutions.</p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Technical Skills:</strong> AI/ML (Python, Selenium), CRM Automation (Salesforce), System Design (BPMN), Data Analysis</li>
-      <li><strong>Business Analysis Tools:</strong> JIRA, Confluence, Visio/draw.io, Salesforce</li>
-      <li><strong>Methodologies:</strong> Agile, Waterfall, ITIL4, PRINCE2</li>
-      <li><strong>Soft Skills:</strong> Stakeholder Management (C-suite), Cross-Functional Collaboration, Requirements Elicitation, Change Management</li>
-    </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="skill-matrix">
-      <!-- Skill Matrix Placeholder -->
-      [AI/ML] ⭐⭐⭐⭐⭐  
-          /   \
-[CRM] ⭐⭐⭐⭐  [System Design] ⭐⭐⭐⭐  
-          \   /
-      [Data Analysis] ⭐⭐⭐
-
-      [JIRA] ⭐⭐⭐⭐⭐  
-          /   \
-[Confluence] ⭐⭐⭐⭐  [Visio/draw.io] ⭐⭐⭐⭐  
-          \   /
-      [Salesforce] ⭐⭐⭐
-
-      [Agile] ⭐⭐⭐⭐⭐  
-          /   \
-[Waterfall] ⭐⭐⭐⭐  [ITIL4] ⭐⭐⭐  
-          \   /
-      [PRINCE2] ⭐⭐
-
-      [Stakeholder] ⭐⭐⭐⭐⭐  
-          /   \
-[Collaboration] ⭐⭐⭐⭐  [Elicitation] ⭐⭐⭐  
-          \   /
-      [Change Management] ⭐⭐
-
-      [AI Platform] ⭐⭐⭐⭐⭐  
-          /   \
-[Training Solutions] ⭐⭐⭐⭐  [Remediation] ⭐⭐⭐  
-          \   /
-      [Process Optimization] ⭐⭐
+  <!-- Password Prompt -->
+  <div id="password-gate">
+      <h2>Enter password to view portfolio</h2>
+      <input type="password" id="password-input" placeholder="Password">
+      <button onclick="checkPassword()">Submit</button>
+      <p id="status"></p>
     </div>
-
-    <div class="bar-chart">
-      <!-- Bar Chart Placeholder -->
-      | Category               | Proficiency |
-      |------------------------|-------------|
-      | AI/ML                  | ⭐⭐⭐⭐⭐     |
-      | CRM Automation         | ⭐⭐⭐⭐      |
-      | System Design          | ⭐⭐⭐⭐      |
-      | Data Analysis          | ⭐⭐⭐       |
-      | JIRA                   | ⭐⭐⭐⭐⭐     |
-      | Confluence             | ⭐⭐⭐⭐      |
-      | Visio/draw.io          | ⭐⭐⭐⭐      |
-      | Salesforce             | ⭐⭐⭐       |
-      | Agile                  | ⭐⭐⭐⭐⭐     |
-      | Waterfall              | ⭐⭐⭐⭐      |
-      | ITIL4                  | ⭐⭐⭐       |
-      | PRINCE2                | ⭐⭐        |
-      | Stakeholder Management | ⭐⭐⭐⭐⭐     |
-      | Collaboration          | ⭐⭐⭐⭐      |
-      | Elicitation            | ⭐⭐⭐       |
-      | Change Management      | ⭐⭐        |
-      | AI Platform            | ⭐⭐⭐⭐⭐     |
-      | Training Solutions     | ⭐⭐⭐⭐      |
-      | Remediation            | ⭐⭐⭐       |
-      | Process Optimization   | ⭐⭐        |
-    </div>
-
-    <div class="process-flow">
-      <!-- Process Flow Placeholder -->
-      [Lead Capture] → [AI Analytics] → [Client Engagement] → [Compliance Check]
-           ↓                          ↓                    ↓
-      [Data Pipeline]              [CRM Integration]      [Government Standards]
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2>Professional Experience</h2>
-    <ul>
-      <li><strong>S-AI-L London Limited – Enablement Automation Lead:</strong> Led AI platform development, aligning with client needs and technical feasibility.</li>
-      <li><strong>QA Consulting – Client Relationship Manager:</strong> Secured over £200,000 in enterprise training contracts. Provided critical feedback during Salesforce CRM migration.</li>
-      <li><strong>VAT Global – Senior Sales Consultant:</strong> Exceeded KPIs by 10–15% consistently. Secured high-profile clients (e.g., Whirlpool, FICO).</li>
-      <li><strong>AEGON – Business Analyst (Contract):</strong> Reduced costs by 12% via internal processes. Automated reporting workflows, reducing manual effort by 50%. Improved 22% throughput for financial advisors via Agile project.</li>
-    </ul>
-  </section>
-
-  <section id="education">
-    <h2>Educational Background</h2>
-    <p><strong>University of Essex – Computer Science (2nd Lower Class Honours)</strong></p>
-    <ul>
-      <li>Relevant Modules: ICT Systems Integration, Data-Structures & Algorithms, Web Development</li>
-      <li>Certifications: ITIL4, PRINCE2</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact & Socials</h2>
-    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-    <p>Portfolio URL: <a href="https://yourportfolio.github.io" target="_blank">yourportfolio.github.io</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Patrick Beswick. All rights reserved.</p>
-  </footer>
-
-<script src="script.js"></script>
+  
+    <!-- Protected Content -->
+    <div id="protected-content" style="display: none;">
+      <header>
+        <h1>Patrick Beswick - Technical Business Analyst Portfolio</h1>
+        <p>A bridge between business needs and technical delivery, leveraging AI, CRM automation, and process optimization.</p>
+      </header>
+  
+    <section id="about">
+      <h2>About Me</h2>
+      <p>A technical business analyst with 7+ years of experience in AI-driven solutions, enterprise training, and process optimization. I bridge the gap between business needs and technical delivery, leveraging my computer science background and hands-on project experience to drive efficiency, compliance, and innovation. My work has reduced costs by 50%, streamlined workflows, and improved client satisfaction through tailored solutions.</p>
+    </section>
+  
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Technical Skills:</strong> AI/ML (Python, Selenium), CRM Automation (Salesforce), System Design (BPMN), Data Analysis</li>
+        <li><strong>Business Analysis Tools:</strong> JIRA, Confluence, Visio/draw.io, Salesforce</li>
+        <li><strong>Methodologies:</strong> Agile, Waterfall, ITIL4, PRINCE2</li>
+        <li><strong>Soft Skills:</strong> Stakeholder Management (C-suite), Cross-Functional Collaboration, Requirements Elicitation, Change Management</li>
+      </ul>
+    </section>
+  
+    <section id="projects">
+      <h2>Projects</h2>
+  
+      <div class="skill-matrix">
+        <!-- Skill Matrix Placeholder -->
+        [AI/ML] ⭐⭐⭐⭐⭐  
+            /   \
+  [CRM] ⭐⭐⭐⭐  [System Design] ⭐⭐⭐⭐  
+            \   /
+        [Data Analysis] ⭐⭐⭐
+  
+        [JIRA] ⭐⭐⭐⭐⭐  
+            /   \
+  [Confluence] ⭐⭐⭐⭐  [Visio/draw.io] ⭐⭐⭐⭐  
+            \   /
+        [Salesforce] ⭐⭐⭐
+  
+        [Agile] ⭐⭐⭐⭐⭐  
+            /   \
+  [Waterfall] ⭐⭐⭐⭐  [ITIL4] ⭐⭐⭐  
+            \   /
+        [PRINCE2] ⭐⭐
+  
+        [Stakeholder] ⭐⭐⭐⭐⭐  
+            /   \
+  [Collaboration] ⭐⭐⭐⭐  [Elicitation] ⭐⭐⭐  
+            \   /
+        [Change Management] ⭐⭐
+  
+        [AI Platform] ⭐⭐⭐⭐⭐  
+            /   \
+  [Training Solutions] ⭐⭐⭐⭐  [Remediation] ⭐⭐⭐  
+            \   /
+        [Process Optimization] ⭐⭐
+      </div>
+  
+      <div class="bar-chart">
+        <!-- Bar Chart Placeholder -->
+        | Category               | Proficiency |
+        |------------------------|-------------|
+        | AI/ML                  | ⭐⭐⭐⭐⭐     |
+        | CRM Automation         | ⭐⭐⭐⭐      |
+        | System Design          | ⭐⭐⭐⭐      |
+        | Data Analysis          | ⭐⭐⭐       |
+        | JIRA                   | ⭐⭐⭐⭐⭐     |
+        | Confluence             | ⭐⭐⭐⭐      |
+        | Visio/draw.io          | ⭐⭐⭐⭐      |
+        | Salesforce             | ⭐⭐⭐       |
+        | Agile                  | ⭐⭐⭐⭐⭐     |
+        | Waterfall              | ⭐⭐⭐⭐      |
+        | ITIL4                  | ⭐⭐⭐       |
+        | PRINCE2                | ⭐⭐        |
+        | Stakeholder Management | ⭐⭐⭐⭐⭐     |
+        | Collaboration          | ⭐⭐⭐⭐      |
+        | Elicitation            | ⭐⭐⭐       |
+        | Change Management      | ⭐⭐        |
+        | AI Platform            | ⭐⭐⭐⭐⭐     |
+        | Training Solutions     | ⭐⭐⭐⭐      |
+        | Remediation            | ⭐⭐⭐       |
+        | Process Optimization   | ⭐⭐        |
+      </div>
+  
+      <div class="process-flow">
+        <!-- Process Flow Placeholder -->
+        [Lead Capture] → [AI Analytics] → [Client Engagement] → [Compliance Check]
+             ↓                          ↓                    ↓
+        [Data Pipeline]              [CRM Integration]      [Government Standards]
+      </div>
+    </section>
+  
+    <section id="experience">
+      <h2>Professional Experience</h2>
+      <ul>
+        <li><strong>S-AI-L London Limited – Enablement Automation Lead:</strong> Led AI platform development, aligning with client needs and technical feasibility.</li>
+        <li><strong>QA Consulting – Client Relationship Manager:</strong> Secured over £200,000 in enterprise training contracts. Provided critical feedback during Salesforce CRM migration.</li>
+        <li><strong>VAT Global – Senior Sales Consultant:</strong> Exceeded KPIs by 10–15% consistently. Secured high-profile clients (e.g., Whirlpool, FICO).</li>
+        <li><strong>AEGON – Business Analyst (Contract):</strong> Reduced costs by 12% via internal processes. Automated reporting workflows, reducing manual effort by 50%. Improved 22% throughput for financial advisors via Agile project.</li>
+      </ul>
+    </section>
+  
+    <section id="education">
+      <h2>Educational Background</h2>
+      <p><strong>University of Essex – Computer Science (2nd Lower Class Honours)</strong></p>
+      <ul>
+        <li>Relevant Modules: ICT Systems Integration, Data-Structures & Algorithms, Web Development</li>
+        <li>Certifications: ITIL4, PRINCE2</li>
+      </ul>
+    </section>
+  
+    <section id="contact">
+      <h2>Contact & Socials</h2>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+      <p>Portfolio URL: <a href="https://yourportfolio.github.io" target="_blank">yourportfolio.github.io</a></p>
+    </section>
+  
+    <footer>
+      <p>&copy; 2025 Patrick Beswick. All rights reserved.</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
