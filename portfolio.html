@@ -4,20 +4,72 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Patrick Beswick - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
+      background-color: #f0f2f5;
       color: #333;
     }
-    /* Initially hide the protected content */
-    #protected-content {
-      display: none;
-      padding: 0 20px;
+
+    header, section, footer {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      margin-top: 2rem;
     }
-    /* Password prompt styles */
+
+    h1, h2 {
+      color: #1a1a1a;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      border-bottom: 2px solid #e2e2e2;
+      padding-bottom: 0.3rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    .bar-chart, .process-flow, .skill-matrix {
+      font-family: monospace;
+      white-space: pre-wrap;
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 2rem;
+    }
+
+    /* Password gate styling */
     #password-gate {
       display: flex;
       flex-direction: column;
@@ -25,33 +77,47 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
-      padding: 0 20px;
+      background-color: #f0f2f5;
     }
+
     #password-input {
-      padding: 8px;
-      font-size: 16px;
+      padding: 10px;
+      font-size: 1rem;
       margin-top: 10px;
-      width: 200px;
-      max-width: 80vw;
-      box-sizing: border-box;
+      width: 240px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
+
     button {
-      padding: 8px 16px;
-      font-size: 16px;
+      padding: 10px 18px;
+      font-size: 1rem;
       margin-top: 10px;
       cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background-color: #1e90ff;
+      color: white;
     }
+
+    button:hover {
+      background-color: #0d75d9;
+    }
+
     #status {
       color: red;
       margin-top: 10px;
       min-height: 1.2em;
       font-weight: bold;
     }
+
+    #protected-content {
+      display: none;
+      padding-bottom: 3rem;
+    }
   </style>
 </head>
 <body>
-
-  <!-- Password Prompt -->
   <div id="password-gate">
     <h2>Enter password to view portfolio</h2>
     <input type="password" id="password-input" placeholder="Password" />
@@ -59,7 +125,6 @@
     <p id="status"></p>
   </div>
 
-  <!-- Protected Content -->
   <div id="protected-content">
     <header>
       <h1>Patrick Beswick - Technical Business Analyst Portfolio</h1>
@@ -68,100 +133,41 @@
 
     <section id="about">
       <h2>About Me</h2>
-      <p>A technical business analyst with 7+ years of experience in AI-driven solutions, enterprise training, and process optimization. I bridge the gap between business needs and technical delivery, leveraging my computer science background and hands-on project experience to drive efficiency, compliance, and innovation. My work has reduced costs by 50%, streamlined workflows, and improved client satisfaction through tailored solutions.</p>
+      <p>A technical business analyst with 7+ years of experience in AI-driven solutions, enterprise training, and process optimization...</p>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
       <ul>
-        <li><strong>Technical Skills:</strong> AI/ML (Python, Selenium), CRM Automation (Salesforce), System Design (BPMN), Data Analysis</li>
-        <li><strong>Business Analysis Tools:</strong> JIRA, Confluence, Visio/draw.io, Salesforce</li>
+        <li><strong>Technical:</strong> AI/ML (Python, Selenium), CRM Automation (Salesforce), System Design (BPMN)</li>
+        <li><strong>Tools:</strong> JIRA, Confluence, Visio/draw.io, Salesforce</li>
         <li><strong>Methodologies:</strong> Agile, Waterfall, ITIL4, PRINCE2</li>
-        <li><strong>Soft Skills:</strong> Stakeholder Management (C-suite), Cross-Functional Collaboration, Requirements Elicitation, Change Management</li>
+        <li><strong>Soft Skills:</strong> Stakeholder Management, Collaboration, Change Management</li>
       </ul>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
-      <div class="skill-matrix">
-        [AI/ML] ⭐⭐⭐⭐⭐  
-            /   \
-  [CRM] ⭐⭐⭐⭐  [System Design] ⭐⭐⭐⭐  
-            \   /
-        [Data Analysis] ⭐⭐⭐
-  
-        [JIRA] ⭐⭐⭐⭐⭐  
-            /   \
-  [Confluence] ⭐⭐⭐⭐  [Visio/draw.io] ⭐⭐⭐⭐  
-            \   /
-        [Salesforce] ⭐⭐⭐
-  
-        [Agile] ⭐⭐⭐⭐⭐  
-            /   \
-  [Waterfall] ⭐⭐⭐⭐  [ITIL4] ⭐⭐⭐  
-            \   /
-        [PRINCE2] ⭐⭐
-  
-        [Stakeholder] ⭐⭐⭐⭐⭐  
-            /   \
-  [Collaboration] ⭐⭐⭐⭐  [Elicitation] ⭐⭐⭐  
-            \   /
-        [Change Management] ⭐⭐
-  
-        [AI Platform] ⭐⭐⭐⭐⭐  
-            /   \
-  [Training Solutions] ⭐⭐⭐⭐  [Remediation] ⭐⭐⭐  
-            \   /
-        [Process Optimization] ⭐⭐
-      </div>
-  
-      <div class="bar-chart">
-        | Category               | Proficiency |
-        |------------------------|-------------|
-        | AI/ML                  | ⭐⭐⭐⭐⭐     |
-        | CRM Automation         | ⭐⭐⭐⭐      |
-        | System Design          | ⭐⭐⭐⭐      |
-        | Data Analysis          | ⭐⭐⭐       |
-        | JIRA                   | ⭐⭐⭐⭐⭐     |
-        | Confluence             | ⭐⭐⭐⭐      |
-        | Visio/draw.io          | ⭐⭐⭐⭐      |
-        | Salesforce             | ⭐⭐⭐       |
-        | Agile                  | ⭐⭐⭐⭐⭐     |
-        | Waterfall              | ⭐⭐⭐⭐      |
-        | ITIL4                  | ⭐⭐⭐       |
-        | PRINCE2                | ⭐⭐        |
-        | Stakeholder Management | ⭐⭐⭐⭐⭐     |
-        | Collaboration          | ⭐⭐⭐⭐      |
-        | Elicitation            | ⭐⭐⭐       |
-        | Change Management      | ⭐⭐        |
-        | AI Platform            | ⭐⭐⭐⭐⭐     |
-        | Training Solutions     | ⭐⭐⭐⭐      |
-        | Remediation            | ⭐⭐⭐       |
-        | Process Optimization   | ⭐⭐        |
-      </div>
-  
-      <div class="process-flow">
-        [Lead Capture] → [AI Analytics] → [Client Engagement] → [Compliance Check]
-             ↓                          ↓                    ↓
-        [Data Pipeline]              [CRM Integration]      [Government Standards]
-      </div>
+      <h2>Projects & Visuals</h2>
+      <div class="skill-matrix">[Skill Matrix Graphic]</div>
+      <div class="bar-chart">[Bar Chart Graphic]</div>
+      <div class="process-flow">[Process Flow Graphic]</div>
     </section>
 
     <section id="experience">
       <h2>Professional Experience</h2>
       <ul>
-        <li><strong>S-AI-L London Limited – Enablement Automation Lead:</strong> Led AI platform development, aligning with client needs and technical feasibility.</li>
-        <li><strong>QA Consulting – Client Relationship Manager:</strong> Secured over £200,000 in enterprise training contracts. Provided critical feedback during Salesforce CRM migration.</li>
-        <li><strong>VAT Global – Senior Sales Consultant:</strong> Exceeded KPIs by 10–15% consistently. Secured high-profile clients (e.g., Whirlpool, FICO).</li>
-        <li><strong>AEGON – Business Analyst (Contract):</strong> Reduced costs by 12% via internal processes. Automated reporting workflows, reducing manual effort by 50%. Improved 22% throughput for financial advisors via Agile project.</li>
+        <li><strong>S-AI-L London Limited:</strong> Led AI platform development...</li>
+        <li><strong>QA Consulting:</strong> Secured £200K+ in contracts...</li>
+        <li><strong>VAT Global:</strong> Exceeded KPIs, closed FICO, Whirlpool...</li>
+        <li><strong>AEGON:</strong> Automated reporting, reduced costs 12%...</li>
       </ul>
     </section>
 
     <section id="education">
       <h2>Educational Background</h2>
-      <p><strong>University of Essex – Computer Science (2nd Lower Class Honours)</strong></p>
+      <p><strong>University of Essex – BSc Computer Science</strong></p>
       <ul>
-        <li>Relevant Modules: ICT Systems Integration, Data-Structures & Algorithms, Web Development</li>
+        <li>Modules: Data Structures, Web Dev, ICT Integration</li>
         <li>Certifications: ITIL4, PRINCE2</li>
       </ul>
     </section>
@@ -169,9 +175,9 @@
     <section id="contact">
       <h2>Contact & Socials</h2>
       <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></p>
-      <p>Portfolio URL: <a href="https://yourportfolio.github.io" target="_blank" rel="noopener noreferrer">yourportfolio.github.io</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+      <p>Portfolio: <a href="https://yourportfolio.github.io">yourportfolio.github.io</a></p>
     </section>
 
     <footer>
@@ -179,9 +185,7 @@
     </footer>
   </div>
 
-  <!-- CryptoJS library for SHA256 hashing -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-
   <script>
     (function () {
       const submitBtn = document.getElementById('submit-btn');
@@ -189,9 +193,6 @@
       const status = document.getElementById('status');
       const protectedContent = document.getElementById('protected-content');
       const passwordGate = document.getElementById('password-gate');
-
-      // SHA256 hash of the password "yourPassword123"
-      // Replace this with your own hashed password (hex string)
       const correctHash = "69d4547eba893e1193421750098db5f0b61b6c3a3481eb31ab6e191873b79eea";
 
       function checkPassword() {
@@ -201,9 +202,7 @@
           return;
         }
         const hashed = CryptoJS.SHA256(pwd).toString(CryptoJS.enc.Hex);
-
         if (hashed === correctHash) {
-          // Show protected content
           passwordGate.style.display = "none";
           protectedContent.style.display = "block";
         } else {
@@ -214,15 +213,10 @@
       }
 
       submitBtn.addEventListener('click', checkPassword);
-
-      // Optional: allow Enter key to submit
       passwordInput.addEventListener('keyup', function(e) {
-        if (e.key === 'Enter') {
-          checkPassword();
-        }
+        if (e.key === 'Enter') checkPassword();
       });
     })();
   </script>
-
 </body>
 </html>
