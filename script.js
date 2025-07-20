@@ -1,7 +1,8 @@
 // password-protect.js
 
-// Replace this with your SHA-256 hash of the password (lowercase hex)
-const correctHash = '69d4547eba893e1193421750098db5f0b61b6c3a3481eb31ab6e191873b79eea'; // example hash, replace with yours
+const correctHash = '69d4547eba893e1193421750098db5f0b61b6c3a3481eb31ab6e191873b79eea'; // replace with your actual hash
+
+console.log("Password script loaded");
 
 async function checkPassword(input) {
     const encoder = new TextEncoder();
@@ -16,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container');
     const originalContent = container.innerHTML; // Save original content
 
-    // Show password prompt initially
     container.innerHTML = `
         <h1>Password Required</h1>
         <input type="password" id="password" placeholder="Enter password" autofocus />
@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('submitBtn').addEventListener('click', async () => {
         const input = document.getElementById('password').value;
+        console.log("Submit clicked, checking password:", input);
         const status = document.getElementById('status');
         const valid = await checkPassword(input);
 
@@ -37,5 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
             status.style.color = "red";
         }
     });
-});
 
+    document.getElementById('password').addEventListener('keydown', (e) => {
+        if (e.key === "Enter") {
+            document.getElementById('submitBtn').click();
+        }
+    });
+});
