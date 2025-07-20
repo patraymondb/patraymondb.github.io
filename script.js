@@ -1,5 +1,7 @@
-<script>
-const correctHash = '69d4547eba893e1193421750098db5f0b61b6c3a3481eb31ab6e191873b79eea'; // Your hash
+// password-protect.js
+
+// Replace this with your SHA-256 hash of the password (lowercase hex)
+const correctHash = '69d4547eba893e1193421750098db5f0b61b6c3a3481eb31ab6e191873b79eea'; // example hash, replace with yours
 
 async function checkPassword(input) {
     const encoder = new TextEncoder();
@@ -14,9 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container');
     const originalContent = container.innerHTML; // Save original content
 
+    // Show password prompt initially
     container.innerHTML = `
         <h1>Password Required</h1>
-        <input type="password" id="password" placeholder="Enter password" />
+        <input type="password" id="password" placeholder="Enter password" autofocus />
+        <br />
         <button id="submitBtn">Submit</button>
         <p id="status"></p>
     `;
@@ -27,11 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const valid = await checkPassword(input);
 
         if (valid) {
-            container.innerHTML = originalContent; // Restore original content
+            container.innerHTML = originalContent; // Show original content
         } else {
             status.textContent = "Incorrect password. Try again.";
             status.style.color = "red";
         }
     });
 });
-</script>
+
